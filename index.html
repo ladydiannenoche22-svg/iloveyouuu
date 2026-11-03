@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>43 Months ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+
+<!-- Loading screen, progress bar, star canvas, floating hearts layer -->
+<div id="loader"><b>♥</b><span>Loading our little universe…</span></div>
+<div id="bar"></div>
+<canvas id="stars"></canvas>
+<div id="fx"></div>
+
+<!-- MUSIC: starts when the visitor taps "TAP TO BEGIN" (browsers block sound before a tap).
+     1) If music/background-music.mp3 exists, it is used (full song, no login needed).
+     2) Otherwise the Spotify player is used. To change the Spotify song, edit TRACK_ID in script.js. -->
+<audio id="bgm" src="music/background-music.mp3" loop preload="auto"></audio>
+<button id="music" aria-label="Music">♪</button>
+<div id="mp"><small>Press ▶ if the music doesn't start ♡</small><div id="spf"></div><iframe id="yt" allow="autoplay; encrypted-media; picture-in-picture" title="Music" hidden></iframe></div>
+<div id="gate"><button class="btn" id="begin">TAP TO BEGIN ♡</button><small>(turn your sound on ♡)</small></div>
+
+<!-- ============ INTRO: GALAXY HEART (the heart and rings are built in script.js) ============ -->
+<section id="intro">
+  <div class="scene" id="scene"></div>
+  <div id="itext">
+    <p>43 MONTHS...</p>
+    <p>AND MY HEART STILL CHOOSES YOU. ♡</p>
+    <p>3 YEARS &amp; 7 MONTHS OF US</p>
+  </div>
+  <button class="btn" id="enter">ENTER OUR LITTLE UNIVERSE ♡</button>
+</section>
+
+<main id="main" hidden>
+
+  <!-- WELCOME ENVELOPE -->
+  <section class="sec" id="s1">
+    <h2 class="glow">HEY, LOVE! ♡</h2>
+    <p>Guess what? Someone prepared a little surprise for you!</p>
+    <div class="env" id="env" data-t="HAPPY 43RD MONTHSARY, MY LOVE!"></div>
+    <small>tap the envelope ✉</small>
+    <button class="btn" id="startBtn" hidden>LET'S START OUR LITTLE JOURNEY</button>
+  </section>
+
+  <!-- 43 MONTHS -->
+  <section class="sec" id="s2">
+    <div id="nw" class="nw"><div class="num glow" id="num">0</div></div>
+    <h2 class="rv">MONTHS OF LOVE, LAUGHTER, LESSONS, AND GROWTH.</h2>
+    <h2 class="rv script big2">3 YEARS AND 7 MONTHS.</h2>
+    <p class="glass rv">Not every chapter was perfect, but every chapter became part of our story. We've experienced happy moments, difficult days, misunderstandings, and unexpected turns. And through everything, we've learned more about ourselves and each other.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="sec" id="s3">
+    <h2 class="glow">OUR LITTLE STORY ♡</h2>
+    <div class="tl" id="tl"></div>
+  </section>
+
+  <!-- FUNNY QUESTION -->
+  <section class="sec" id="s4">
+    <h2 class="glow">ONE VERY IMPORTANT QUESTION...</h2>
+    <p class="big2">Do you still love me even when I'm annoying?</p>
+    <div class="qbox">
+      <button class="btn" id="yes">YES, OBVIOUSLY ♡</button>
+      <button class="btn alt" id="no">NOPE</button>
+    </div>
+    <h3 id="qmsg" class="glow"></h3>
+  </section>
+
+  <!-- 8 REASONS -->
+  <section class="sec" id="s5">
+    <h2 class="glow">8 LITTLE REASONS WHY I APPRECIATE YOU</h2>
+    <small>tap each card</small>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- OPEN WHEN -->
+  <section class="sec" id="s6">
+    <h2 class="glow">OPEN THESE WHEN YOU NEED THEM ♡</h2>
+    <div class="oes" id="oes"></div>
+  </section>
+
+  <!-- CONTRACT -->
+  <section class="sec" id="s7">
+    <h2 class="glow">OUR OFFICIAL RELATIONSHIP CONTRACT</h2>
+    <p class="script big2">Terms and Conditions of Being My Favorite Person</p>
+    <div class="glass contract rv">
+      <ol id="rules"></ol>
+      <label><input type="checkbox" id="agree"> I HAVE READ AND ACCEPTED THE TERMS AND CONDITIONS.</label>
+      <button class="btn" id="accept" disabled>OFFICIALLY ACCEPT ♡</button>
+      <svg id="sign" viewBox="0 0 200 60"><path pathLength="100" d="M5 40C20 5 30 5 28 30S40 50 55 25 70 10 75 35 95 45 110 20 130 15 135 38 160 40 195 15"/></svg>
+      <h3 id="cmsg" class="glow"></h3>
+    </div>
+  </section>
+
+  <!-- LOVE LETTER -->
+  <section class="sec" id="s8">
+    <h2 class="glow">TO MY LOVE, AFTER 3 YEARS AND 7 MONTHS</h2>
+    <div class="env" id="env2" data-t="A letter for you, love ♡"></div>
+    <small>tap the envelope ✉</small>
+    <div class="paper" id="paper" hidden></div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="sec" id="fin">
+    <h2 id="fl"></h2>
+    <div id="fend" hidden>
+      <h2 class="big glow" style="--d:0s">WE'RE STILL WRITING OUR STORY. ♡</h2>
+      <p class="script big2" style="--d:1.2s">43 MONTHS DOWN, AND MORE MEMORIES TO CREATE.</p>
+      <p style="--d:2.4s">Here's to choosing understanding over assumptions, communication over silence, and growth over repeating the same mistakes.</p>
+      <p style="--d:3.4s">Thank you for being part of my story, love.</p>
+      <p class="glow" style="--d:4.4s"><b>Happy 43rd monthsary! ♡</b></p>
+      <div style="--d:5.4s"><span class="hrt">♥</span></div>
+      <div style="--d:6.4s"><button class="btn" id="replay">REPLAY OUR LITTLE UNIVERSE</button></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
